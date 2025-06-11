@@ -17,10 +17,9 @@ app.use('/',userRouter)
 
 DB_conn().then(()=>{
 
-    app.listen(port,()=>{
-        console.log(`The Server is listenting at the port ${port}`)
-    })
+
 }
 ).catch(()=>{
     console.log(`Error in Server.`)
 })
+module.exports = app;
