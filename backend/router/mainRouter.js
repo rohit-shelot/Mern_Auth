@@ -6,5 +6,6 @@ const { loginSchema,registerSchema } = require('../middleware/ensureFields.js')
 router.post('/login',loginSchema,userController.login)
 router.post('/logout',userController.logout)
 router.post('/signup',registerSchema,userController.register)
+router.post('/ping',userController.ping)
 
 module.exports = router;

@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken')
 const Usermodel = require('../models/userModel')
 const bcrypt = require('bcrypt')
 
+const ping = async(req,res)=>{
+    res.send("hello there")
+}
 const login = async(req,res) =>{
     const {email,password} = req.body;
     if(!email || !password) {
@@ -73,4 +76,4 @@ const logout = (req, res) => {
     return res.json({ message: 'Logged out successfully' });
 };
 
-module.exports = {login, register, logout}
+module.exports = {login, register, logout,ping}
