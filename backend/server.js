@@ -10,19 +10,17 @@ app.use(express.json())
 app.use(cors())
 app.use(cookieParser())
 
-// API routes
 app.use('/api/auth', mainRouter)
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).json({ error: 'Something went wrong!' })
 })
 
 DB_conn().then(() => {
-  console.log('Connected to database')
+  console.log('Database connected successfully')
 }).catch((error) => {
   console.error('Database connection error:', error)
 })
 
-module.exports = app // Do not use app.listen() for Vercel deployment
+module.exports = app
