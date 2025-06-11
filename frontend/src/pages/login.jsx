@@ -25,7 +25,7 @@ const Login = () => {
   }
 
   try {
-    const url = "https://mern-auth-ten-lemon.vercel.app/api/auth/login";
+    const url = `${import.meta.env.VITE_URL}/api/auth/login`;
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
